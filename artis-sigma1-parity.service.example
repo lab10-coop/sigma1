@@ -1,0 +1,12 @@
+[Unit]
+Description=ARTIS tau1 parity service
+After=network.target
+[Service]
+User=artis
+Group=artis
+WorkingDirectory=/home/artis
+ExecStart=/home/artis/tau1/parity --config=trustnode.toml 
+Restart=always
+[Install]
+WantedBy=multi-user.target
+

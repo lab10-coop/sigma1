@@ -1,0 +1,20 @@
+[Unit]
+Description=ARTIS tau1 parity service
+After=artis-tau1-parity.service
+[Service]
+User=artis
+Group=artis
+WorkingDirectory=/home/artis/node-status-reporter
+Environment=NODE_ENV=production
+Environment=RPC_HOST=localhost
+Environment=RPC_PORT=8545
+Environment=LISTENING_PORT=30303
+Environment=WS_SERVER=http://status.tau1.artis.network
+Environment=WS_SECRET=ahZahhoth3engaem
+# Environment=INSTANCE_NAME=
+# Environment=CONTACT_DETAILS=
+ExecStart=/usr/bin/npm start
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

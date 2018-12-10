@@ -1,0 +1,15 @@
+# doc: https://wiki.parity.io/Configuring-Parity-Ethereum.html#config-file
+
+[parity]
+base_path = "data"
+chain = "spec.json"
+
+auto_update = "none"
+
+[network]
+# don't attempts to connect to non-public IPs (hosters do not like that)
+allow_ips = "public"
+
+[misc]
+log_file = "parity.log"
+
