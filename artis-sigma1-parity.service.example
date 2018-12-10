@@ -4,7 +4,7 @@ After=network.target
 [Service]
 User=artis
 Group=artis
-WorkingDirectory=/home/artis
+WorkingDirectory=/home/artis/sigma1
 ExecStart=/home/artis/sigma1/parity --config=trustnode.toml 
 Restart=always
 [Install]

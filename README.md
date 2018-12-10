@@ -71,6 +71,8 @@ sudo apt install nodejs
 ```
 (Of course you can take a look into `nodesource_setup.sh` before executing it with root permissions.)
 
+Ask for the secret key needed to get your node listed.
+
 **Install**  
 Next, get the application:
 ```
@@ -81,13 +83,13 @@ npm install
 
 **Run**  
 Now you _could_ run it with  
-`NODE_ENV=production INSTANCE_NAME=<your instance name here> WS_SERVER=https://status.sigma1.artis.network WS_SECRET=<ASK_FOR_THE_SECRET> npm start`  
+`NODE_ENV=production INSTANCE_NAME=<your instance name here> WS_SERVER=https://status.sigma1.artis.network WS_SECRET=<SECRET-KEY> npm start`  
 
 **Keep running**
 
 If you installed a service for parity, you should do the same for this application.
 * Copy `artis-sigma1-statusreporter.service.example` to `/etc/systemd/system/artis-sigma1-statusreporter.service`.
-* Open the copied file and adapt it to your needs. Important: set something for _INSTANCE_NAME_ and _CONTACT_DETAILS_ and then uncomment both.
+* Open the copied file and adapt it to your needs. Important: set the secret key for _WS_SECRET_, also set something for _INSTANCE_NAME_ and _CONTACT_DETAILS_ and then uncomment them.
 * Start the service: `systemctl start artis-sigma1-statusreporter`
 * Flag service to be started on boot: `systemctl enable artis-sigma1-statusreporter`
 

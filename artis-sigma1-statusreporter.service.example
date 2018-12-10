@@ -9,7 +9,7 @@ Environment=NODE_ENV=production
 Environment=RPC_HOST=localhost
 Environment=RPC_PORT=8545
 Environment=LISTENING_PORT=30303
-Environment=WS_SERVER=http://status.sigma1.artis.network
+Environment=WS_SERVER=https://status.sigma1.artis.network
 # Environment=WS_SECRET=
 # Environment=INSTANCE_NAME=
 # Environment=CONTACT_DETAILS=
