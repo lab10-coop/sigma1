@@ -28,7 +28,7 @@ In case you prefer to have an account which allows login with password, omit `--
   
 **Prepare**
 ```
-git clone https://github.com/lab10-coop/sigma1`
+git clone https://github.com/lab10-coop/sigma1
 cd sigma1
 ./download-parity.sh
 ```
