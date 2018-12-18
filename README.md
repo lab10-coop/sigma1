@@ -75,9 +75,6 @@ The following steps require root privileges (sudo):
 Finally, make sure the service is running: `systemctl status artis-sigma1-parity`.  
 In order to see a live log, do `journalctl -f -u artis-sigma1-parity` (Ctrl-C will get you back).
 
-**Known issues**  
-
-
 ## Get listed in status dashboard
 
 There's a nice network status dashboard at https://status.sigma1.artis.network/  
