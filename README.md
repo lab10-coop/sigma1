@@ -138,7 +138,7 @@ Once you have Metamask installed:
 <img src="metamask_config_screenshot.png" width="400px">
 
 Note that Metamask is still beta software and sometimes behaves in weird ways.  
-For use with ARTIS Sigma1, we recommend to set up a fresh instance of Metamask which used for this chain only.
+For use with ARTIS Sigma1, we recommend to set up a fresh instance of Metamask which is used for this chain only.
 
 # About
 
