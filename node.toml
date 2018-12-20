@@ -10,6 +10,9 @@ auto_update = "none"
 # don't attempts to connect to non-public IPs (hosters do not like that)
 allow_ips = "public"
 
+[mining]
+min_gas_price = 1000000000
+
 [misc]
 log_file = "parity.log"
 
