@@ -135,8 +135,6 @@ Once you have Metamask installed:
 * (optional, but convenient) Click _show advanced options_, then enter "ATS" for _Symbol_ and "ARTIS sigma1" for _Nickame_
 * Click _SAVE_
 
-<img src="metamask_config_screenshot.png" width="400px">
-
 Note that Metamask is still beta software and sometimes behaves in weird ways.  
 For use with ARTIS Sigma1, we recommend to set up a fresh instance of Metamask which is used for this chain only.
 
