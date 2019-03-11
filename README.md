@@ -148,7 +148,7 @@ git clone https://github.com/lab10-coop/artis-bridge-oracle
 cd artis-bridge-oracle
 ```
 
-Now, create a file `.env`, copy the contents of `bridge-oracle-config.env.example` (from this repo) into it and add the private key as value for `VALIDATOR_ADDRESS_PRIVATE_KEY`.
+Now, create a file `.env`, copy the contents of [bridge-oracle-config.env.example](bridge-oracle-config.env.example) into it and add the private key as value for `VALIDATOR_ADDRESS_PRIVATE_KEY`.
 
 Then, as root execute `./install-bridge.sh bridge`.  
 This will install and start required dependencies (RabbitMQ, Redis, NodeJs) and set up systemd unit files for the bridge.  
