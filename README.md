@@ -151,7 +151,7 @@ cd artis-bridge-oracle
 Now, create a file `.env`, copy the contents of [bridge-oracle-config.env.example](bridge-oracle-config.env.example) into it and add the private key as value for `VALIDATOR_ADDRESS_PRIVATE_KEY`.
 
 Then, as root execute `./install-bridge.sh bridge`.  
-This will install and start required dependencies (RabbitMQ, Redis, NodeJs) and set up systemd unit files for the bridge.  
+This will install and start required dependencies (RabbitMQ, Redis, Node.js) and set up systemd unit files for the bridge.  
 The first (and only) argument denotes the bridge user. Change accordingly if it's not _bridge_.  
 Note that this script was made for and tested with Ubuntu 18.04. If using another OS, you need to do the setup manually - you can consult the shell script for the needed steps.
 
