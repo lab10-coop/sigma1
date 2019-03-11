@@ -125,6 +125,44 @@ If you installed a service for parity, you should do the same for this applicati
 
 You can check the status of the service with `systemctl status artis-sigma1-statusreporter`.
 
+## Run a bridge validator
+
+**Create a user**  
+This step is optional.  
+For the smoothest setup journey (least changes necessary), create a user named "bridge".  
+Execute as root:
+```
+adduser --disabled-password bridge
+su bridge
+cd
+```
+
+**Create a private key**  
+Next, you need a private key for the bridge validator account.  
+You may use any tool you want (e.g. dices). One option is to get (build or download) Parity's `ethkey` binary ([Linux binary](https://releases.parity.io/ethereum/v2.2.10/x86_64-unknown-linux-gnu/ethkey)) and run `./ethkey generate random` - this will print a random public key and its address.  
+Please communicate this address to the bridge admin in order to get your validator whitelisted in the bridge contracts.
+
+**Setup**  
+```
+git clone https://github.com/lab10-coop/artis-bridge-oracle
+cd artis-bridge-oracle
+```
+
+Now, create a file `.env`, copy the contents of `bridge-oracle-config.env.example` (from this repo) into it and add the private key as value for `VALIDATOR_ADDRESS_PRIVATE_KEY`.
+
+Then, as root execute `./install-bridge.sh bridge`.  
+This will install and start required dependencies (RabbitMQ, Redis, NodeJs) and set up systemd unit files for the bridge.  
+The first (and only) argument denotes the bridge user. Change accordingly if it's not _bridge_.  
+Note that this script was made for and tested with Ubuntu 18.04. If using another OS, you need to do the setup manually - you can consult the shell script for the needed steps.
+
+**Start / Watch / Stop**  
+Run `./start-bridge.sh` in order to start all bridge related systemd services.  
+With `./check-bridge.sh` you can check the status of the bridge.  
+With `./monitor-bridge.sh` you can watch the log of the bridge services in realtime.  
+With `./stop-bridge.sh` you can stop the bridge related systemd services.
+
+Note that the start and stop script support an optional argument `--persist` which _enables_/_disables_ the services (for setting or removing the autostart flag for the service).
+
 ## use with Metamask
 
 [Metamask](https://metamask.io/) is a browser extension which implements an Ethereum wallet. It can be used with any Ethereum compatible network.  
