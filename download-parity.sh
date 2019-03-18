@@ -3,11 +3,13 @@
 set -e
 set -u
 
-BIN_LINUX="https://releases.parity.io/ethereum/v2.1.6/x86_64-unknown-linux-gnu/parity"
-SHA256_LINUX="542f18da9e4291d98938d3c59cd87c1798bf9b4b7e535cf3321c848934fbdbdb"
+VERSION="2.2.10"
 
-BIN_DARWIN="https://releases.parity.io/ethereum/v2.1.6/x86_64-apple-darwin/parity"
-SHA256_DARWIN="d3f6ed4261f283a1c774b5595cf492377c659c3a749ec0abb3d370acc9da0cd1"
+BIN_LINUX="https://releases.parity.io/ethereum/v2.2.10/x86_64-unknown-linux-gnu/parity"
+SHA256_LINUX="a8b3e844de560dbded8e2cdf33601ff1bda96747efd5c4bd3646763f0e125a62"
+
+BIN_DARWIN="https://releases.parity.io/ethereum/v2.2.10/x86_64-apple-darwin/parity"
+SHA256_DARWIN="6267f80dcf6709e40074b8bf369999be0615bbc075c281cbe483cfe0095801e7"
 
 # param_1: message to be printed before exiting
 function giving_up {
@@ -29,9 +31,23 @@ function check_integrity {
 	fi
 }
 
-if [ -f parity ]; then
-    giving_up "A file named parity already exists in this folder. If you want to replace it, please delete it and then run this script again"
+force=false
+if [[ $# -eq 1 ]]; then
+	if [[ $1 == "--force" ]]; then
+		echo "force"
+		force=true
+	else
+		giving_up "usage: $0 [--force]"
+	fi
+elif [[ $# != 0 ]]; then
+	giving_up "usage: $0 [--force]"
 fi
+if [ -f parity ]; then
+	if ! $force; then
+		giving_up "A file named parity already exists in this folder. Run with argument '--force' in order to override."
+	fi
+fi
+
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	echo "This looks like a Linux machine..."
@@ -50,4 +66,4 @@ else
 fi
 
 echo
-echo "Parity was successfully downloaded and verified!"
+echo "Parity v$VERSION was successfully downloaded and verified!"
