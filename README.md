@@ -140,7 +140,8 @@ cd
 **Create a private key**  
 Next, you need a private key for the bridge validator account.  
 You may use any tool you want (e.g. dices). One option is to get (build or download) Parity's `ethkey` binary ([Linux binary](https://releases.parity.io/ethereum/v2.2.10/x86_64-unknown-linux-gnu/ethkey)) and run `./ethkey generate random` - this will print a random public key and its address.  
-Please communicate this address to the bridge admin in order to get your validator whitelisted in the bridge contracts.
+Next, send at least 10 ATS to this address - needed for creating the signing transactions.  
+Finally, communicate this address to the bridge admin in order to get your validator whitelisted in the bridge contracts.
 
 **Setup**  
 ```
