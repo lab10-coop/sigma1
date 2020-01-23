@@ -3,13 +3,10 @@
 set -e
 set -u
 
-VERSION="2.5.9"
+VERSION="2.5.13"
 
 BIN_LINUX="https://releases.parity.io/ethereum/v$VERSION/x86_64-unknown-linux-gnu/parity"
-SHA256_LINUX="3089290d2ec46f324e6331b9cee0adc91a039bd6173bb2b3a0d70291281cb7f7"
-
-BIN_DARWIN="https://releases.parity.io/ethereum/v$VERSION/x86_64-apple-darwin/parity"
-SHA256_DARWIN="545b57d452137225e259b196ba6a34e05cb0fa28585ca10c91ac27efc8157405"
+SHA256_LINUX="e133fb316c7829d9291bb73ceb3053409053d03603565a2b4d2a582c9ad4c84b"
 
 # param_1: message to be printed before exiting
 function giving_up {
@@ -53,12 +50,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	echo "This looks like a Linux machine..."
 	curl -f $BIN_LINUX > parity
 	check_integrity $SHA256_LINUX
-	chmod +x parity
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	echo "This looks like a Mac..."
-	curl -f $BIN_DARWIN > parity
-	# todo: find pre-installed tool for sha256 calc
-#	check_integrity $SHA256_DARWIN
 	chmod +x parity
 else
 	echo "### Sorry, I can't handle this platform: $OSTYPE"
