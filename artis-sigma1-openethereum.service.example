@@ -1,11 +1,11 @@
 [Unit]
-Description=ARTIS parity service
+Description=ARTIS openethereum service
 After=network.target
 [Service]
 User=artis
 Group=artis
 WorkingDirectory=/home/artis/sigma1
-ExecStart=/home/artis/sigma1/parity --config=trustnode.toml 
+ExecStart=/home/artis/sigma1/openethereum --config=trustnode.toml 
 Restart=always
 [Install]
 WantedBy=multi-user.target

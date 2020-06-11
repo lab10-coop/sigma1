@@ -14,15 +14,16 @@ function giving_up {
 	exit 1
 }
 
-# calculates the checksum of file "parity" and compares it to the expected_checksum. Exits on mismatch.
+# calculates the checksum of file "openethereum" and compares it to the expected_checksum. Exits on mismatch.
 # param_1: expected checksum
 function check_integrity {
 	expected_checksum=$1
-	file_checksum=$(sha256sum parity | cut -f 1 -d " ")
+	file_checksum=$(sha256sum openethereum | cut -f 1 -d " ")
 	echo "file checksum: $file_checksum"
 
 	if [[ $file_checksum != $expected_checksum ]]; then
 		echo "### Checksum verification failed. calculated: $file_checksum | expected: $expected_checksum"
+		rm openethereum
 		rm parity
 		giving_up ""
 	fi
@@ -39,22 +40,34 @@ if [[ $# -eq 1 ]]; then
 elif [[ $# != 0 ]]; then
 	giving_up "usage: $0 [--force]"
 fi
-if [ -f parity ]; then
+
+if [[ -f parity ]]; then
+	# if it's a symlink, don't bother
+	if [[ ! -L parity ]]; then
+		if ! $force; then
+			giving_up "A file named parity (former name of the binary) already exists in this folder. Run with argument '--force' in order to override."
+		fi
+	fi
+fi
+
+if [[ -f openethereum ]]; then
 	if ! $force; then
-		giving_up "A file named parity already exists in this folder. Run with argument '--force' in order to override."
+		giving_up "A file named openethereum already exists in this folder. Run with argument '--force' in order to override."
 	fi
 fi
 
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	echo "This looks like a Linux machine..."
-	curl -f $BIN_LINUX > parity
+	curl -f $BIN_LINUX > openethereum
 	check_integrity $SHA256_LINUX
-	chmod +x parity
+	chmod +x openethereum
+	# leave symlink for backwards compatibility (e.g. in case the systemd service was not updated)
+	rm -f parity && ln -s openethereum parity
 else
 	echo "### Sorry, I can't handle this platform: $OSTYPE"
-	giving_up "Please manually download or build a parity binary compatible with your platform."
+	giving_up "Please manually download or build an openethereum binary compatible with your platform."
 fi
 
 echo
-echo "Parity v$VERSION was successfully downloaded and verified!"
+echo "OpenEthereum v$VERSION was successfully downloaded and verified!"

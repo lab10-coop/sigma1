@@ -14,5 +14,7 @@ allow_ips = "public"
 min_gas_price = 1000000000
 
 [misc]
-log_file = "parity.log"
+# If run as systemd service, journald will persist log output.
+# Uncomment the following line in order have OpenEthereum log to a file itself.
+#log_file = "openethereum.log"
 
