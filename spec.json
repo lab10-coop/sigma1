@@ -38,7 +38,11 @@
     "eip1052Transition": "0x0",
     "eip1283Transition": "0x0",
     "eip1283DisableTransition": "2229330",
-    "wasmActivationTransition": "0x0"
+    "eip1283ReenableTransition": 10000000,
+    "eip1344Transition": 10000000,
+    "eip1706Transition": 10000000,
+    "eip1884Transition": 10000000,
+    "eip2028Transition": 10000000
   },
   "genesis": {
     "seal": {
@@ -77,7 +81,7 @@
               }
             }
           },
-          "0x7fffffffffffff": {
+          "10000000": {
             "info": "Istanbul HF",
             "price": {
               "alt_bn128_const_operations": {
@@ -99,7 +103,7 @@
               }
             }
           },
-          "0x7fffffffffffff": {
+          "10000000": {
             "info": "Istanbul HF",
             "price": {
               "alt_bn128_const_operations": {
@@ -122,12 +126,27 @@
               }
             }
           },
-          "0x7fffffffffffff": {
+          "10000000": {
             "info": "Istanbul HF",
             "price": {
               "alt_bn128_pairing": {
                 "base": 45000,
                 "pair": 34000
+              }
+            }
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000009": {
+      "builtin": {
+        "name": "blake2_f",
+        "pricing": {
+          "10000000": {
+            "info": "Istanbul HF",
+            "price": {
+              "blake2_f": {
+                "gas_per_round": 1
               }
             }
           }
