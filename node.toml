@@ -1,4 +1,4 @@
-# doc: https://wiki.parity.io/Configuring-Parity-Ethereum.html#config-file
+# doc: https://openethereum.github.io/wiki/Configuring-Parity-Ethereum.html#config-file
 
 [parity]
 base_path = "data"

@@ -1,4 +1,4 @@
-# doc: https://wiki.parity.io/Configuring-Parity-Ethereum.html#config-file
+# doc: https://openethereum.github.io/wiki/Configuring-Parity-Ethereum.html#config-file
 
 [parity]
 chain = "spec.json"
@@ -32,4 +32,4 @@ reseal_on_txs = "none"
 engine_signer = 
 
 [misc]
-log_file = "parity.log"
+log_file = "openethereum.log"
