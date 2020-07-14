@@ -1,6 +1,6 @@
 [Unit]
 Description=ARTIS status reporter service
-After=artis-sigma1-parity.service
+After=artis-sigma1-openethereum.service
 [Service]
 User=artis
 Group=artis
