@@ -170,9 +170,12 @@ Note that the start and stop script support an optional argument `--persist` whi
 Once you have Metamask installed:
 * Open and unlock Metamask
 * Click the _Networks_ dropdown and choose _Custom RPC_
-* For _RPC URL_, enter "https://rpc.sigma1.artis.network"
-* (optional, but convenient) Click _show advanced options_, then enter "ATS" for _Symbol_ and "ARTIS sigma1" for _Nickame_
-* Click _SAVE_
+* For _Network Name_, enter "ARTIS Sigma1"
+* For _RPC URL_, enter "http://rpc.sigma1.artis.network"
+* For _Chain ID_, enter "0x3c301"
+* For _symbol_, enter "ATS"
+* For _Block Explorer URL", enter "https://explorer.sigma1.artis.network"
+* Click _Save_
 
 Note that Metamask is still beta software and sometimes behaves in weird ways.  
 For use with ARTIS Sigma1, we recommend to set up a fresh instance of Metamask which is used for this chain only.
