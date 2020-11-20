@@ -3,7 +3,6 @@
 [parity]
 chain = "spec.json"
 base_path = "data"
-auto_update = "none"
 
 # name of your node
 # Example: identity = "random_guy"

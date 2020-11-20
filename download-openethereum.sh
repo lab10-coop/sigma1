@@ -3,10 +3,10 @@
 set -e
 set -u
 
-VERSION="3.0.1"
+VERSION="3.1.0"
 
 BIN_LINUX="http://dev.lab10.io/artis/openethereum-$VERSION"
-SHA256_LINUX="55969133c36db8dfc7759c1951abde9572e8c64ed10e1a094feabf95e8654eda"
+SHA256_LINUX="585c976e0a0b817e6e40d872d781ba4faadee88c69a52eda4cc96a8e8edea89a"
 
 # param_1: message to be printed before exiting
 function giving_up {
