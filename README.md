@@ -171,7 +171,7 @@ Once you have Metamask installed:
 * Open and unlock Metamask
 * Click the _Networks_ dropdown and choose _Custom RPC_
 * For _Network Name_, enter "ARTIS Sigma1"
-* For _RPC URL_, enter "http://rpc.sigma1.artis.network"
+* For _RPC URL_, enter "https://rpc.sigma1.artis.network"
 * For _Chain ID_, enter "0x3c301"
 * For _symbol_, enter "ATS"
 * For _Block Explorer URL", enter "https://explorer.sigma1.artis.network"
